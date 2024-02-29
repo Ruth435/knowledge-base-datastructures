@@ -28,25 +28,35 @@ public class GenericsKbArrayApp
             String key = JOptionPane.showInputDialog("Enter the term: ");
             String phrase = JOptionPane.showInputDialog("Enter the statement: ");
             double confidence = Double.parseDouble(JOptionPane.showInputDialog("Enter the confidence score: "));
-            boolean added = knowledgeBase.add(key,phrase,confidence);
-            if(added)
-            {
-               JOptionPane.showMessageDialog(null, "Statement added successfully");
-            }
-            else
-            {
-               JOptionPane.showMessageDialog(null, "Could not add statement");
-            }
+            String added = knowledgeBase.add(key,phrase,confidence);
+            JOptionPane.showMessageDialog(null, added);
          }
          else if (choice == 3)
          {
             input = JOptionPane.showInputDialog("Enter the term to search:");
-            knowledgeBase.search(input);
-            JOptionPane.showMessageDialog(null, );
+            String statement = knowledgeBase.search(input);
+            if (statement.compareTo("") != 0)
+            {
+               JOptionPane.showMessageDialog(null, statement );
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null, "Term not found");
+            }
          }
          else if (choice == 4)
          {
-         
+            input = JOptionPane.showInputDialog("Enter the term to search:");
+            String sentence = JOptionPane.showInputDialog("Enter the statement to search for:");
+            String statement = knowledgeBase.searchBySentence(input, sentence);
+            if (statement.compareTo("") != 0)
+            {
+               JOptionPane.showMessageDialog(null, statement );
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null, "Term not found");
+            }
          }
          else
          {
