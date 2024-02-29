@@ -38,7 +38,57 @@ public class FactsArray
       {
          return false;
       }
-
    }
-
+      
+      public String search(String k)
+      {
+         int place = this.exists(k);
+         if (place > 0)
+         {
+            return "Statement found: " + k + " " + knowledge[place].getInfo() + ". (Confidence score: " + knowledge[place].getConfidence() + ")";
+         }
+         return "";   
+      }
+      
+      public int exists(String k)
+      {
+         boolean found = false;
+         int check = 0;
+         String key = "";
+         Facts result = null;
+         while (found == false && check < 6000 && knowledge[check] != null)
+         {
+            key = knowledge[check].getKey();
+            if (key.equalsIgnoreCase(k))
+            {
+               found = true;
+               return check;
+            }
+            check++;
+         }
+            return -1;
+      }
+      
+      public boolean update(String k, String p, double c)
+      {
+         int place = this.exists(k);
+         if (place > 0)
+         {
+            knowledge[place].setInfo(p);
+            knowledge[place].setConfidence(c);            
+            return true;
+         }
+         return false;
+      }
+      
+      public boolean add(String k, String p, double c)
+      {
+         if(exists(k) == -1)
+         {
+            knowledge[count] = new Facts(k,p,c);
+            count++;
+            return true;
+         }
+         return false;
+      }
 }
