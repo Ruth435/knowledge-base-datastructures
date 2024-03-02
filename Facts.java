@@ -8,9 +8,9 @@
 */
 public class Facts
 {
-   private String key;
-   private String info;
-   private double confidence;
+   private String key; //Stores the key phrase of the statement
+   private String info; //stroes the main statement
+   private double confidence; //stores the confidence score of the statement
    
 /**
 * empty constructor sets the values to blank or zero
