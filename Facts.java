@@ -80,4 +80,12 @@ public class Facts
       setInfo(in);
       setConfidence(c);
    }
+
+/**
+* compares the keys of the given fact to the current one
+*/  
+   public int compareTo(Facts c)
+   {
+      return (c.getKey()).compareTo(key);
+   }
 }

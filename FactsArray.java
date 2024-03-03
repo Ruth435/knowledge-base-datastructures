@@ -46,9 +46,7 @@ public class FactsArray
          key = lineS.next();
          phrase = lineS.next();
          confidence = lineS.nextDouble();
-         current = new Facts(key, phrase, confidence); //adds the fact to the array
-         knowledge[count] = current;
-         count++;
+         add(key, phrase, confidence); //adds the fact to the array
          }
          return true;
       }

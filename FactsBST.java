@@ -131,6 +131,24 @@ public class FactsBST
         return "Statement could not be updated or added"; 
       }      
    }
+   
+   public void insert ( Facts d, BinaryTreeNode<Facts> node )
+   {
+      if (d.compareTo (node.data) <= 0)
+      {
+         if (node.left == null)
+            node.left = new BinaryTreeNode<Facts> (d, null, null);
+         else
+            insert (d, node.left);
+      }
+      else
+      {
+         if (node.right == null)
+            node.right = new BinaryTreeNode<Facts> (d, null, null);
+         else
+            insert (d, node.right);
+      }
+   }
 
 /**updates the node d witht the new details phrase and confidence*/     
    public void update(Facts d, String p, double c)
