@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"BinaryTreeNode"},{"p":"<Unnamed>","l":"Facts"},{"p":"<Unnamed>","l":"FactsArray"},{"p":"<Unnamed>","l":"FactsBST"},{"p":"<Unnamed>","l":"GenericsKbArrayApp"},{"p":"<Unnamed>","l":"GenericsKbBSTApp"}];updateSearchResults();
